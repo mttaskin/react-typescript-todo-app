@@ -6,7 +6,7 @@ interface TodoType {
 
 interface ITodoList {
     todos: TodoType[];
-    // toggleTodo:ToggleFn;
+    toggleTodo:ToggleFn;
     // deleteTodo: DeleteFn;
 }
  

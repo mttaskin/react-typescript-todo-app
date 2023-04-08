@@ -31,6 +31,15 @@ try {
 }
 }
 
+const toggleTodo:ToggleFn = async (item)=> {
+try {
+  await axios.put(`${url}/${item.id}`, {...item,isDone:!item.isDone})
+  getTodos()
+  } catch (error) {
+  console.log(error);
+}
+}
+
 
 useEffect(() => {
   getTodos()
@@ -40,7 +49,7 @@ useEffect(() => {
   return (
     <div className='main'>
       <InputForm addTodo={addTodo} />
-      <TodoList todos={todos}/>
+      <TodoList todos={todos} toggleTodo={toggleTodo}/>
     </div>
   )
 }
